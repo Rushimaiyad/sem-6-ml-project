@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bank Risk Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="dashboard">
+    <h1>🏦 AI Loan Risk Dashboard</h1>
+
+    <div class="card input-card">
+        <form action="/predict" method="post">
+            <input type="number" name="income" placeholder="Annual Income" required>
+            <input type="number" name="loan_amount" placeholder="Loan Amount" required>
+            <input type="number" name="credit_score" placeholder="Credit Score" required>
+            <button type="submit">Analyze Risk</button>
+        </form>
+    </div>
+
+    {% if prediction_text %}
+    <div class="card result-card {% if risk == 1 %}high{% else %}low{% endif %}">
+        <h2>{{ prediction_text }}</h2>
+
+        <div class="progress-bar">
+            <div class="progress" style="width: {{ probability }}%"></div>
+        </div>
+
+        <p>Default Probability: {{ probability }}%</p>
+    </div>
+
+    <div class="card">
+        <h3>Model Performance</h3>
+        <img src="/static/confusion_matrix.png" width="300">
+    </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

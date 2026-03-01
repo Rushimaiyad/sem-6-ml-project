@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+}
+
+.dashboard {
+    padding: 40px;
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 25px;
+    margin: 20px auto;
+    width: 400px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+}
+
+button {
+    width: 95%;
+    padding: 12px;
+    margin-top: 10px;
+    border-radius: 8px;
+    border: none;
+    background: #00c6ff;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: #0072ff;
+}
+
+.result-card.low {
+    border-left: 6px solid #00ff99;
+}
+
+.result-card.high {
+    border-left: 6px solid #ff4d4d;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    margin: 15px 0;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #ff4d4d, #00ff99);
+    animation: grow 1.5s ease-in-out;
+}
+
+@keyframes grow {
+    from { width: 0; }
+}
